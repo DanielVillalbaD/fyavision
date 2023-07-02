@@ -1,0 +1,17 @@
+.home {
+  margin-top: 5rem;
+}
+.home .form {
+  display: flex;
+  flex-direction: row;
+  align-items: initial;
+  justify-content: initial;
+  margin: 2rem 0;
+  gap: 1rem;
+}
+.home .form input {
+  padding-left: 1rem;
+}
+.home .form .button {
+  margin: 0;
+}/*# sourceMappingURL=home.css.map */

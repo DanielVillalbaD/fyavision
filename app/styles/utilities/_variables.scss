@@ -1,0 +1,36 @@
+//VARIABLES
+$i2-red-color: #d7192d;
+$i2-red-darken: #a80e1f;
+$i2-green-color: #A0CD34;
+$i2-orange-color: #f27f36;
+$i2-yellow-color: #f3ce11;
+$i2-flex-color: #888888;
+$i2-business-color: #888888;
+$i2-business-flex-color: #222222;
+$border-color: #d0d0d0;
+$i2-transition: all 0.25s ease;
+$text-color-dark: #222222;
+$text-color-semi: #777777;
+$i2-grad-dark: #a80e1f;
+$i2-grad-light: #d7192d;
+$i2-disabled-grey: #efefef;
+$i2-footer-color: #999999;
+
+:root {
+    --elements_per_file: 15vw;
+    --percent_elements: 15%;
+  }
+
+$border-below: 1pt solid $i2-red-color;
+
+//MEDIA QUERIES BREAKPOINTS
+$desktop: 1199.98px;
+$desktop-s: 991.98px;
+$tablet: 767.98px;
+$mobile: 575.98px;
+
+//FORMS
+$error-border-color: #e66371;
+$error-background-color: rgba(249, 193, 199, .4);
+$ok-border-color: #b6d869;
+$ok-background-color: rgba(224, 241, 185, .4);

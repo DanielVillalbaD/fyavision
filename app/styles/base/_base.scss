@@ -1,0 +1,128 @@
+@import "../utilities/variables", "../utilities/mixins";
+
+html{
+    scroll-behavior: smooth;
+}
+
+*, body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Public Sans', sans-serif;
+}
+
+section {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    
+    > div {
+      transition: opacity .3s linear;
+    }
+    svg {
+      display: none;
+    }
+    .hexagon {
+        color: black;
+      width: var(--percent_elements);
+      height: var(--elements_per_file);
+      //clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+      //background-color: #fdfdfd;
+      position: absolute;
+      top: 0;
+      //background-blend-mode: multiply;
+      right: 0;
+      transition: opacity 0.4s ease, width 0.4s ease, height 0.4s ease,
+        transform 0.3s ease-in-out;
+      animation: init 2s forwards;
+      .inner {
+        //background-blend-mode: multiply;
+        width: 100%;
+        height: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(1.0475);
+        svg {
+          display:block;
+          height: 100%;
+          width: 100%;
+          color: black;
+          transition: transform .25 ease-in-out, filter .25s ease-in-out;
+          cursor: pointer;
+          &.hex {
+            opacity: 1;
+          }
+  
+          &:hover {
+            transform: scale(1.02);
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .6));
+          }
+        }
+      }
+    }
+  }
+  
+  .in {
+    opacity: 1;
+  }
+  
+  .out {
+    opacity: 0;
+  }
+  
+  @keyframes init {
+    0% {
+      opacity: 0;
+      transform: rotateZ(20deg);
+      width: var(--percent_elements);
+      height: var(--elements_per_file);
+    }
+    100% {
+      opacity: 1;
+      width: var(--percent_elements);
+      height: var(--elements_per_file);
+    }
+  }
+  
+  @keyframes init-b {
+    0% {
+      opacity: 0;
+      transform: skew(30deg);
+      width: var(--percent_elements);
+      height: var(--elements_per_file);
+    }
+    100% {
+      opacity: 0.6;
+      width: var(--percent_elements);
+      height: var(--elements_per_file);
+    }
+  }
+  
+  .line {
+    color: grey;
+    opacity: .7;
+    stroke: black;
+  }
+  
+  .dash {
+    stroke-dasharray: 10000;
+    stroke-dashoffset: 10000;
+    animation: dash 5s linear forwards;
+  }
+  
+  @keyframes dash {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+  
+  .hex path, .hex use {
+    max-width: 100%;
+    max-height: 100%;
+    stroke: black;
+    color: black;
+  }
+  

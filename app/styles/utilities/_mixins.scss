@@ -1,0 +1,64 @@
+
+@import 'variables';
+
+// ABREVIACIÓN PARA EL USO DE FLEX
+@mixin flex( $direction, $align, $justify){
+    display: flex;
+    flex-direction: $direction;
+    align-items: $align;
+    justify-content: $justify;
+}
+
+// ABREVIACIÓN PARA EL USO DE MEDIAQUERIES 
+@mixin mobile{
+    @media screen and (max-width : $mobile){
+        @content;
+    }
+}
+@mixin tablet{
+    @media screen and (max-width : $tablet){
+        @content;
+    }
+}
+@mixin desktop-s{
+    @media screen and (max-width : $desktop-s){
+        @content;
+    }
+}
+@mixin desktop{
+    @media screen and (max-width : $desktop){
+        @content;
+    }
+}
+
+// RESET DE ESTILOS PARA LISTAS
+@mixin resetList{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+//RESET ESTILOS BOTÓN
+@mixin resetButton{
+    background-color: transparent;
+    border:none;
+    color: inherit;
+    font-weight: inherit;
+    text-transform: inherit;
+    font-size: inherit;
+    white-space: inherit;
+    cursor: pointer;
+}
+
+//BUTTON
+@mixin button{
+    background-color: $i2-red-color;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 0.25rem;
+    outline: none;
+    border-color: transparent;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border: 1px solid $i2-red-color;
+}
