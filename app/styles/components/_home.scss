@@ -2,12 +2,15 @@
 
 .home{
     font-size: 1.12rem;
+    width: 100vw;
+    height: 100vh;
+
     @include tablet{
         
     }
     header {
         color: white;
-        .back {
+        .lmenu {
             position: absolute;
             content: "";
             top: 0;
@@ -17,7 +20,7 @@
             width: 100vw;
             height: 100vh;
             transform: translate(0,0);
-            animation: introduction 5s forwards 2s;
+            animation: introduction 1s forwards 1s;
         }
         h1 {
             color: currentColor;
@@ -60,6 +63,36 @@
             }
         }
     }
+    main {
+        .glass {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 80vw;
+            height: 80vh;
+            max-height: 860px;
+            max-width: 740px;
+            transform: translate(-50%, -50%);
+            .card {
+                background: rgba(255, 255, 255, 0.44);
+                background: linear-gradient(96deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0.5) 33%, rgba(255,255,255,0.62) 66%, rgba(255,255,255,0.31) 100%);
+                border: none;
+                padding: 32px 32px 16px;
+                border-radius: 16px;
+                text-align: center;
+                -webkit-backdrop-filter: blur(7px) hue-rotate(-20deg);
+                backdrop-filter: blur(7px) hue-rotate(-20deg);
+                text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                color: black;
+                max-width: 800px;
+                min-height: 500px;
+                position: relative;
+                user-select: none;
+                box-shadow: 0 0 20px rgba(0,0,0, .4);
+            }
+        }
+        
+    }
     &-body{
         @include flex(row, center, center);
 
@@ -97,3 +130,94 @@
         left: calc(100% - 100px);
     }
 }
+
+.slider {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    align-items: flex-end;
+    display: flex;
+}
+
+#slide_a {
+    width: 100%;
+    height: 100%;
+    picture {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+            height: 100%;
+        img {
+            width: 100%;
+            height: 100%;
+        object-fit: cover;
+        }
+    }
+}
+
+$softPink: linear-gradient(315deg, #d1dbdf 0%, #e6e6e6 74%);
+$metalBg: linear-gradient( to bottom, #c8cbde, #e6ebed, #d5d7e5);
+$size: 90px;
+$halfSize: 45px;
+
+.cubeMenu {
+  position: fixed;
+  top: 50px;
+  left: 50px;
+  overflow: visible;
+}
+
+#ccubes {
+  position: relative;
+}
+
+.cube {
+  position: absolute;
+  width: $size; height: $size;
+  transition: transform 1s ease-in-out;
+  cursor: pointer;
+  left: 0;
+  will-change: transform;
+  & > * {
+    position: absolute;
+    width: 100%; height: 100%;
+    background-image: $softPink;
+    opacity: 0.8;
+    box-shadow: 0 0 .9em #0d324d inset;
+    transition: box-shadow 1.8s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.25em;
+    color: transparent; 
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.4),0px -1px 1px #0d324d;
+  }
+
+  .front { transform: translateZ($halfSize); }
+  .right { transform: rotateY(90deg) translateZ($halfSize); }
+  .back { transform: rotateY(180deg) translateZ($halfSize); }
+  .left { transform: rotateY(270deg) translateZ($halfSize); }
+  .bottom {
+    width: $size; height: $size;
+    bottom: 0;
+    transform: rotateX(270deg) translateZ($halfSize);
+  }
+  .top {
+    width: $size; height: $size;
+    background-image: $softPink;
+    background-size: calc($size * 2) $size;
+    background-repeat: no-repeat;
+    transform: rotateX(90deg) translateZ($halfSize);
+  }
+  transform: translateZ(125px) rotateY(-45deg) rotateX(115deg) rotateZ(120deg);
+  /*
+  &:hover {
+    transform: translateZ(200px) rotateY(270deg) rotateZ(35deg) rotateY(-65deg) !important;
+    & > * {
+      box-shadow: 0 0 .9em #0d324d inset, 0px 0px 100px -15px #344434;
+    }
+  }
+  */
+}
+

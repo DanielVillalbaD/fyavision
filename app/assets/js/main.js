@@ -37,7 +37,7 @@ function draw(files) {
   if (polygonArr[randomP]) {
     appendPolygon(polygonArr[randomP]);
     polygonArr.splice(randomP, 1);
-  } 
+  }
 }
 
 const hexagonsRar = `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 143 164" xml:space="preserve"><g transform="matrix(1 0 0 1 71.6 82.45) scale(1.0225, 0.8875)" id="hexagonIcon"><path style="stroke: inherit; stroke-width: 3; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: currentColor; fill-rule: nonzero; opacity: 1;" transform=" translate(-127.83, -131.66)" d="m 197.92817 172.13075 l -70.10232 40.47359 l -70.102321 -40.4736 l 0 -80.947185 l 70.102321 -40.473594 l 70.10232 40.473595 z" stroke-linecap="round"/></g></svg>`;
@@ -86,7 +86,7 @@ function initOld() {
       } else {
         clearInterval(ixxInt);
       }
-    }, 100);
+    }, 10);
   }
 
 function initAgain() {
@@ -96,7 +96,64 @@ function initAgain() {
   init();
 }
 
+function randomAnimate() {
+  var ixxAnim = setInterval(function(){
+    const tgt = document.querySelectorAll(".hexagon .inner");
+    const randomP = Math.floor(Math.random() * (tgt.length + 1));
+    if (tgt[randomP]) {
+      tgt[randomP].classList.toggle("out");
+    }
+    if (tgt[randomP -1]) {
+      tgt[randomP - 1].classList.toggle("out");
+    }
+    if (tgt[randomP +1]) {
+      tgt[randomP + 1].classList.toggle("out");
+    }
+    if (tgt[randomP -2]) {
+      tgt[randomP - 2].classList.toggle("out");
+    }
+    if (tgt[randomP +2]) {
+      tgt[randomP + 2].classList.toggle("out");
+    }
+    if (tgt[randomP -3]) {
+      tgt[randomP - 3].classList.toggle("out");
+    }
+    if (tgt[randomP +3]) {
+      tgt[randomP + 3].classList.toggle("out");
+    }
+    if (tgt[randomP -4]) {
+      tgt[randomP - 4].classList.toggle("out");
+    }
+    if (tgt[randomP +4]) {
+      tgt[randomP + 4].classList.toggle("out");
+    }
+  }, 64);
+}
+const positions = {
+  'right':  `translateZ(25px) rotateY(-84deg) rotateX(-0deg) rotateZ(2deg)`,
+  'front': `translateZ(25px) rotateY(5deg) rotateX(5deg) rotateZ(0deg)`,
+  'back': `translateZ(25px) rotateY(-177deg) rotateX(-2deg) rotateZ(0deg)`,
+  'left': `translateZ(35px) rotateY(95deg) rotateX(-0deg) rotateZ(5deg)`,
+  'top': `translateZ(30px) rotateY(-88deg) rotateX(-90deg) rotateZ(95deg)`,
+  'bottom': `translateZ(30px) rotateY(-90deg) rotateX(-270deg) rotateZ(-88deg)` 
+}
+
+var clicked = false;
+var nextPosition = 0;
+const positionsArr = ["front", "right", "back", "left", "top", "bottom"];
+function addingMenuLogic(event) {
+  const target = document.querySelector("#ccubes .cube");
+  target.style.transform = positions[positionsArr[nextPosition]];
+  nextPosition >= 5 ? nextPosition = 0 : nextPosition += 1;
+  clicked = true;
+}
+
 window.onload = (event) => {
     initOld();
-    setTimeout(()=> hexClicked(1,2), 3300);
+    randomAnimate();
+    //setTimeout(()=> hexClicked(1,2), 3300);
+    addingMenuLogic(event);
 };
+document.querySelector("#ccubes .cube").addEventListener("click", addingMenuLogic, false);
+
+

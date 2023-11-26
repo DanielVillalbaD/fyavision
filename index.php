@@ -1,16 +1,12 @@
 <?php
     require_once "./config/ini.php";
-    $translate = new TranslationController('es');
-    $translations = $translate->getTranslations();
     global $root;
-    $pageData = new BasicData($translations["MetaDataResource"]["titleHome"]);
     global $core;
 ?>
 <!DOCTYPE html>
-<html lang="<?=$translate->currentLang?>">
+<html lang="es">
 <head>
     <?php 
-        echo $pageData->metaTagsElement;
         $core->getLinkTag();
         require_once($_SERVER['DOCUMENT_ROOT']."/$root/app/components/head-links.php");
     ?>
