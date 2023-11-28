@@ -42,12 +42,16 @@
 @mixin resetButton{
     background-color: transparent;
     border:none;
-    color: inherit;
-    font-weight: inherit;
     text-transform: inherit;
-    font-size: inherit;
     white-space: inherit;
     cursor: pointer;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    &:active, &:focus {
+        outline: none;
+        box-shadow: none;
+    }
 }
 
 //BUTTON
