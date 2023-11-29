@@ -68,7 +68,6 @@
             width: 80vw;
             max-width: 740px;
             transition: transform 1.2s ease-in-out, opacity 1.2s ease;
-            opacity: .4;
             transform: translate(-50%, 0) scale(.2);
 
             .container {
@@ -154,31 +153,38 @@
                     }
                 }
             }
-            &#front {
-                transform: translate(-92%, 20%) scale(.2);
+            &#right.animate {
+                transform: translate(-92%, 10%) scale(.19);
                 &.animate {
-                    animation: frontA 25s infinite alternate;
+                    animation: rightA 25s infinite alternate;
                 }
             }
-            &#right.animate {
-                animation: rightA 25s infinite alternate;
-                transform: translate(-92%, 10%) scale(.19);
-            }
             &#back.animate {
-                animation: backA 25s infinite alternate;
                 transform: translate(-88%, 0%) scale(.19);
+                &.animate {
+                    animation: backA 25s infinite alternate;
+                }
             }
             &#left.animate {
-                animation: leftA 25s infinite alternate;
                 transform: translate(5%, 15%) scale(.19);
+                &.animate {
+                    animation: leftA 25s infinite alternate;
+                }
             }
             &#top.animate {
-                animation: topA 25s infinite alternate;
                 transform: translate(-2.5%, 10%) scale(.19);
+                &.animate {
+                    animation: topA 25s infinite alternate;
+                }
             }
             &#bottom.animate {
-                animation: bottomA 25s infinite alternate;
                 transform: translate(-7.5%, 0%) scale(.2);
+                &.animate {
+                    animation: bottomA 25s infinite alternate;
+                }
+            }
+            &:not(.animate) {
+                opacity: 0;
             }
             &.active {
                 //z-index: 10;
@@ -195,7 +201,6 @@
                 opacity: 0;
             }
         }
-        
     }
     &-body{
         @include flex(row, center, center);

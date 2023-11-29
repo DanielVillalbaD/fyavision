@@ -142,21 +142,31 @@ var clicked = false;
 var nextPosition = 0;
 const positionsArr = ["front", "right", "back", "left", "top", "bottom"];
 
-function changeActivePosition(position){
-  document.querySelectorAll(".glass").forEach(function(e, i) {
-    if (i !== position) {
-      e.classList.remove("active");
-      setTimeout(function(){e.classList.add("animate")}, 1024);
-    } else {
-      e.classList.remove("animate");
-      setTimeout(function(){e.classList.add("active")}, 128);
-    }
-  });
+function changeActivePosition(position, fixed = false){
+  const targ = document.querySelectorAll(".glass");
+  if (fixed) {
+    targ[position].classList.remove("active");
+    setTimeout(function(){targ[position].classList.add("animate")}, 1024);
+  } else {
+    targ.forEach(function(e, i) {
+      if (i !== position) {
+        e.classList.remove("active");
+        setTimeout(function(){e.classList.add("animate")}, 1024);
+      } else {
+        e.classList.remove("animate");
+        setTimeout(function(){e.classList.add("active")}, 128);
+      }
+    });
+  }
 }
 function addingMenuLogic(event) {
   const target = document.querySelector("#ccubes .cube");
   target.style.transform = positions[positionsArr[nextPosition]];
-  changeActivePosition(nextPosition);
+  if (nextPosition > 0) {
+    changeActivePosition(nextPosition - 1);
+  } else if (nextPosition === 0 && clicked) {
+    changeActivePosition(4, true);
+  }
   nextPosition >= 5 ? nextPosition = 0 : nextPosition += 1;
   clicked = true;
 }

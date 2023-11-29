@@ -147,26 +147,6 @@ section .hexagon .inner svg:hover {
   --light_bg_grad: linear-gradient(90deg, rgba(255,255,255,0.30808820110075286) 0%, rgba(54,66,66,0.38371845320159315) 35%, rgba(255,255,255,0.24926467168898814) 100%);
 }
 
-@keyframes frontA {
-  0% {
-    transform: translate(-92%, 20%) scale(0.2);
-  }
-  20% {
-    transform: translate(-93%, 17%) scale(0.18);
-  }
-  40% {
-    transform: translate(-89%, 16%) scale(0.17);
-  }
-  60% {
-    transform: translate(-90%, 18%) scale(0.16);
-  }
-  80% {
-    transform: translate(-91%, 22%) scale(0.18);
-  }
-  100% {
-    transform: translate(-92%, 20%) scale(0.2);
-  }
-}
 @keyframes rightA {
   0% {
     transform: translate(-96%, 10%) scale(0.19);
@@ -328,7 +308,6 @@ section .hexagon .inner svg:hover {
   width: 80vw;
   max-width: 740px;
   transition: transform 1.2s ease-in-out, opacity 1.2s ease;
-  opacity: 0.4;
   transform: translate(-50%, 0) scale(0.2);
 }
 .home main .glass .container {
@@ -438,31 +417,38 @@ section .hexagon .inner svg:hover {
 .home main .glass .container .card > * {
   transition: opacity 1.2s ease;
 }
-.home main .glass#front {
-  transform: translate(-92%, 20%) scale(0.2);
-}
-.home main .glass#front.animate {
-  animation: frontA 25s infinite alternate;
-}
 .home main .glass#right.animate {
-  animation: rightA 25s infinite alternate;
   transform: translate(-92%, 10%) scale(0.19);
 }
+.home main .glass#right.animate.animate {
+  animation: rightA 25s infinite alternate;
+}
 .home main .glass#back.animate {
-  animation: backA 25s infinite alternate;
   transform: translate(-88%, 0%) scale(0.19);
 }
+.home main .glass#back.animate.animate {
+  animation: backA 25s infinite alternate;
+}
 .home main .glass#left.animate {
-  animation: leftA 25s infinite alternate;
   transform: translate(5%, 15%) scale(0.19);
 }
+.home main .glass#left.animate.animate {
+  animation: leftA 25s infinite alternate;
+}
 .home main .glass#top.animate {
-  animation: topA 25s infinite alternate;
   transform: translate(-2.5%, 10%) scale(0.19);
 }
+.home main .glass#top.animate.animate {
+  animation: topA 25s infinite alternate;
+}
 .home main .glass#bottom.animate {
-  animation: bottomA 25s infinite alternate;
   transform: translate(-7.5%, 0%) scale(0.2);
+}
+.home main .glass#bottom.animate.animate {
+  animation: bottomA 25s infinite alternate;
+}
+.home main .glass:not(.animate) {
+  opacity: 0;
 }
 .home main .glass.active {
   opacity: 1;
@@ -625,6 +611,13 @@ section .hexagon .inner svg:hover {
 }
 #ccubes .cube .front {
   transform: translateZ(38px);
+}
+#ccubes .cube .front span {
+  border-style: solid;
+  border-width: 14px 0 14px 28px;
+  border-color: transparent transparent transparent #0d324d;
+  opacity: 0.8;
+  transform: translate(1px, 1px);
 }
 #ccubes .cube .right {
   transform: rotateY(90deg) translateZ(38px);

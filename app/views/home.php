@@ -37,7 +37,7 @@
                         />
                         <img
                             src="<?=$host?>/app/assets/img/wam800.png"
-                            alt="Gafas modernas mujer fya vision"
+                            alt="Equipo optometría, óptica san martín de la vega"
                             loading="lazy"
                             decoding="async"
                         />
@@ -48,7 +48,7 @@
             <section class="cubeMenu">
                 <nav id="ccubes">
                 <div class="cube">
-                    <div class="top">5</div><div class="front">1</div><div class="back">3</div><div class="right">2</div><div class="left">4</div><div class="bottom">6</div>
+                    <div class="top">4</div><div class="front" aria-label="iniciar presentación"><span></span></div><div class="back">2</div><div class="right">1</div><div class="left">3</div><div class="bottom">5</div>
                 </div>
                 </nav>
             </section>
@@ -62,7 +62,7 @@
 
         </header>
         <main>
-            <section class="glass active" id="front">
+            <section class="glass" id="right">
                 <div class="container">
                     <div class="card">
                         <p class="fp"><span>7</span><span>medidas en tan solo 90 segundos y sin molestias, realizaremos un preciso análisis de tu fisiología ocular.</span></p>
@@ -81,7 +81,7 @@
                     <button class="next" aria-label="siguiente paso">&#10230;</button>
                 </div>
             </section>
-            <section class="glass" id="right">
+            <section class="glass" id="back">
                 <div class="container">
                     <div class="card">
                     <p class="fp"><span>0.01</span><span>dioptrías de sensibilidad en tu graduación gracias al foróptero VISION-R 800</span></p>
@@ -95,7 +95,7 @@
                     <button class="next" aria-label="siguiente paso">&#10230;</button>
                 </div>
             </section>
-            <section class="glass" id="back">
+            <section class="glass" id="left">
                 <div class="container">
                     <div class="card">
                         <p class="fp"><span>0.01</span><span>dioptrias de sensibilidad, gracias este sistema de refracción que proporciona una revolución tecnológica en el sector de la optometría.</span></p>
@@ -105,26 +105,6 @@
                         <p>Si todavía no te hemos convencido, sigue leyendo, aún no hemos terminado...</p>
                     </div>
                     <div class="index" aria-label="Paso 3, fisiologia ocular"><span>3</span><h2><strong>FISIOLOGÍA</strong><br/>WAM800</h2></div> 
-                    <button class="close" aria-label="cerrar">&#10005;</button>
-                    <button class="prev" aria-label="paso anterior">&#10229;</button>
-                    <button class="next" aria-label="siguiente paso">&#10230;</button>
-                </div>
-            </section>
-            <section class="glass" id="left">
-                <div class="container">
-                    <div class="card">
-                        <p class="fp"><span>7</span><span>medidas en tan solo 90 segundos y sin molestias, realizaremos un preciso análisis de tu fisiología ocular.</span></p>
-                        <p>Nuestra óptica <strong>F<small>&</small>A Vision</strong> pone a San Martín de la Vega a la vanguardia en la detección, evaluación y seguimiento de los diferentes problemas de salud visual de nuestros vecinos gracias a la inversión en el equipo más avanzado, entre ellos, el aberrómetro de frente de onda WAM800.</p>
-                        <p>Entre otras funciones, este equipo brinda una excelente solución para:</p>
-                        <ul>
-                            <li>La detección y seguimiento de la glaucoma</li>
-                            <li>La detección de cataratas</li>
-                            <li>El control fisiológico de la miopía</li>
-                            <li>La simulación de tu vista</li>
-                            <li>La evaluación de la vista cansada y de cerca</li>
-                        </ul>
-                    </div>
-                    <div class="index" aria-label="Paso 3, fisiologia ocular"><span>4</span><h2><strong>FISIOLOGÍA</strong><br/>WAM800</h2></div> 
                     <button class="close" aria-label="cerrar">&#10005;</button>
                     <button class="prev" aria-label="paso anterior">&#10229;</button>
                     <button class="next" aria-label="siguiente paso">&#10230;</button>
@@ -144,7 +124,7 @@
                             <li>La evaluación de la vista cansada y de cerca</li>
                         </ul>
                     </div>
-                    <div class="index" aria-label="Paso 3, fisiologia ocular"><span>5</span><h2><strong>FISIOLOGÍA</strong><br/>WAM800</h2></div> 
+                    <div class="index" aria-label="Paso 3, fisiologia ocular"><span>4</span><h2><strong>FISIOLOGÍA</strong><br/>WAM800</h2></div> 
                     <button class="close" aria-label="cerrar">&#10005;</button>
                     <button class="prev" aria-label="paso anterior">&#10229;</button>
                     <button class="next" aria-label="siguiente paso">&#10230;</button>
@@ -164,9 +144,10 @@
                             <li>La evaluación de la vista cansada y de cerca</li>
                         </ul>
                     </div>
-                    <div class="index" aria-label="Paso 3, fisiologia ocular"><span>6</span><h2><strong>FISIOLOGÍA</strong><br/>WAM800</h2></div> 
+                    <div class="index" aria-label="Paso 3, fisiologia ocular"><span>5</span><h2><strong>FISIOLOGÍA</strong><br/>WAM800</h2></div> 
                     <button class="close" aria-label="cerrar">&#10005;</button>
                     <button class="prev" aria-label="paso anterior">&#10229;</button>
+                    <button class="next" aria-label="siguiente paso">&#10230;</button>
                 </div>
             </section>
         </main>
