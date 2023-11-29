@@ -31,6 +31,7 @@ const x = document.getElementById("abg");
 const figPerFile = 10;
 let intervalIx = 0;
 let polygonArr = [];
+let intervalSleeper = false;
 
 function draw(files) {
   let randomP = Math.floor(Math.random() * (polygonArr.length + 1));
@@ -96,39 +97,55 @@ function initAgain() {
   init();
 }
 
-function randomAnimate() {
+function randomAnimate(slide = false) {
+  if (slide) {
+    if (ixxAnim) {
+      clearInterval(ixxAnim);
+    }
+    const innerTarget = document.querySelectorAll(".hexagon .inner")
+    innerTarget.forEach(e=>e.classList.remove("out"));
+    intervalSleeper = true;
+    setTimeout(()=>{intervalSleeper = false}, 2064);
+  } else {
+    
+  }
   var ixxAnim = setInterval(function(){
-    const tgt = document.querySelectorAll(".hexagon .inner");
-    const randomP = Math.floor(Math.random() * (tgt.length + 1));
-    if (tgt[randomP]) {
-      tgt[randomP].classList.toggle("out");
-    }
-    if (tgt[randomP -1]) {
-      tgt[randomP - 1].classList.toggle("out");
-    }
-    if (tgt[randomP +1]) {
-      tgt[randomP + 1].classList.toggle("out");
-    }
-    if (tgt[randomP -2]) {
-      tgt[randomP - 2].classList.toggle("out");
-    }
-    if (tgt[randomP +2]) {
-      tgt[randomP + 2].classList.toggle("out");
-    }
-    if (tgt[randomP -3]) {
-      tgt[randomP - 3].classList.toggle("out");
-    }
-    if (tgt[randomP +3]) {
-      tgt[randomP + 3].classList.toggle("out");
-    }
-    if (tgt[randomP -4]) {
-      tgt[randomP - 4].classList.toggle("out");
-    }
-    if (tgt[randomP +4]) {
-      tgt[randomP + 4].classList.toggle("out");
+    if (!intervalSleeper) {
+      const tgt = document.querySelectorAll(".hexagon .inner");
+      const randomP = Math.floor(Math.random() * (tgt.length + 1));
+      if (tgt[randomP]) {
+        tgt[randomP].classList.toggle("out");
+      }
+      if (tgt[randomP -1]) {
+        tgt[randomP - 1].classList.toggle("out");
+      }
+      if (tgt[randomP +1]) {
+        tgt[randomP + 1].classList.toggle("out");
+      }
+      if (tgt[randomP -2]) {
+        tgt[randomP - 2].classList.toggle("out");
+      }
+      if (tgt[randomP +2]) {
+        tgt[randomP + 2].classList.toggle("out");
+      }
+      if (tgt[randomP -3]) {
+        tgt[randomP - 3].classList.toggle("out");
+      }
+      if (tgt[randomP +3]) {
+        tgt[randomP + 3].classList.toggle("out");
+      }
+      if (tgt[randomP -4]) {
+        tgt[randomP - 4].classList.toggle("out");
+      }
+      if (tgt[randomP +4]) {
+        tgt[randomP + 4].classList.toggle("out");
+      }
+    } else {
+      return
     }
   }, 64);
 }
+
 const positions = {
   'right':  `translateZ(25px) rotateY(-84deg) rotateX(-0deg) rotateZ(2deg)`,
   'front': `translateZ(25px) rotateY(5deg) rotateX(5deg) rotateZ(0deg)`,
@@ -159,7 +176,8 @@ function changeActivePosition(position, fixed = false){
     });
   }
 }
-function addingMenuLogic(event) {
+function addingMenuLogic() {
+  randomAnimate(true);
   const target = document.querySelector("#ccubes .cube");
   target.style.transform = positions[positionsArr[nextPosition]];
   if (nextPosition > 0) {
@@ -171,12 +189,25 @@ function addingMenuLogic(event) {
   clicked = true;
 }
 
+function goToPreviousSlide() {
+  nextPosition = nextPosition - 2;
+  addingMenuLogic();
+}
+
 window.onload = (event) => {
     initOld();
     randomAnimate();
     //setTimeout(()=> hexClicked(1,2), 3300);
-    addingMenuLogic(event);
+    addingMenuLogic();
 };
+
+function closeSlide() {
+  changeActivePosition(nextPosition - 2, true);
+}
 document.querySelector("#ccubes .cube").addEventListener("click", addingMenuLogic, false);
+document.querySelectorAll(".glass button.next").forEach((e)=>e.addEventListener("click", addingMenuLogic, false));
+document.querySelectorAll(".glass button.prev").forEach((e)=>e.addEventListener("click", goToPreviousSlide, false));
+document.querySelectorAll(".glass button.close").forEach((e)=>e.addEventListener("click", closeSlide, false));
+
 
 

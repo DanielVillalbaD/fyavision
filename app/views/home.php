@@ -7,7 +7,7 @@
     <div class="home general-padding"> 
         <header>
             <section class="slider">
-                <div id="slide_a">
+                <div>
                     <picture class="bg">
                         <source
                             type="image/avif"
@@ -45,13 +45,13 @@
                 </div>
             </section>
             
-            <section class="cubeMenu">
-                <nav id="ccubes">
-                <div class="cube">
-                    <div class="top">4</div><div class="front" aria-label="iniciar presentación"><span></span></div><div class="back">2</div><div class="right">1</div><div class="left">3</div><div class="bottom">5</div>
+            <nav class="cubeMenu">
+                <div id="ccubes">
+                    <div class="cube">
+                        <div class="top">4</div><div class="front" aria-label="iniciar presentación"><span></span></div><div class="back">2</div><div class="right">1</div><div class="left">3</div><div class="bottom">5</div>
+                    </div>
                 </div>
-                </nav>
-            </section>
+            </nav>
 
             <div class="lmenu"></div>
             <div class="logo">
