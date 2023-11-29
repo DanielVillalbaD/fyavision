@@ -8,7 +8,7 @@
         <header>
             <section class="slider">
                 <div>
-                    <picture class="bg">
+                    <picture class="bg" id="p1">
                         <source
                             type="image/avif"
                             srcset="<?=$host?>/app/assets/img/fondo-wam800.avif"
@@ -25,8 +25,26 @@
                             height="1200"
                         />
                     </picture>
+                    <picture class="bg" id="p2">
+                        <source
+                            type="image/avif"
+                            srcset="<?=$host?>/app/assets/img/fondo-vision.avif"
+                        />
+                        <source
+                            type="image/webp"
+                            srcset="<?=$host?>/app/assets/img/fondo-vision.webp"
+                        />
+                        <img
+                            src="<?=$host?>/app/assets/img/fondo-vision.jpg"
+                            alt="Gafas modernas mujer fya vision"
+                            decoding="async"
+                            width="1920"
+                            height="1200"
+                            loading="lazy"
+                        />
+                    </picture>
                     <div id="abg"></div>
-                    <picture>
+                    <picture id="sp1">
                         <source
                             type="image/avif"
                             srcset="<?=$host?>/app/assets/img/wam800.avif"
@@ -42,9 +60,24 @@
                             decoding="async"
                         />
                     </picture>
+                    <picture id="sp2">
+                        <source
+                            type="image/avif"
+                            srcset="<?=$host?>/app/assets/img/vision.avif"
+                        />
+                        <source
+                            type="image/webp"
+                            srcset="<?=$host?>/app/assets/img/vision.webp"
+                        />
+                        <img
+                            src="<?=$host?>/app/assets/img/vision.png"
+                            alt="Equipo optometría, óptica san martín de la vega"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </picture>
                 </div>
             </section>
-            
             <nav class="cubeMenu">
                 <div id="ccubes">
                     <div class="cube">
