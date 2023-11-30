@@ -43,6 +43,24 @@
                             loading="lazy"
                         />
                     </picture>
+                    <picture class="bg" id="p-3">
+                        <source
+                            type="image/avif"
+                            srcset="<?=$host?>/app/assets/img/fondo-visioffice.avif"
+                        />
+                        <source
+                            type="image/webp"
+                            srcset="<?=$host?>/app/assets/img/fondo-visioffice.webp"
+                        />
+                        <img
+                            src="<?=$host?>/app/assets/img/fondo-visioffice.jpg"
+                            alt="Gafas modernas mujer fya vision"
+                            decoding="async"
+                            width="1920"
+                            height="1200"
+                            loading="lazy"
+                        />
+                    </picture>
                     <div id="abg"></div>
                     <picture id="sp-1">
                         <source
@@ -71,6 +89,22 @@
                         />
                         <img
                             src="<?=$host?>/app/assets/img/vision.png"
+                            alt="Equipo optometría, óptica san martín de la vega"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </picture>
+                    <picture id="sp-3">
+                        <source
+                            type="image/avif"
+                            srcset="<?=$host?>/app/assets/img/vissioffice-x.avif"
+                        />
+                        <source
+                            type="image/webp"
+                            srcset="<?=$host?>/app/assets/img/vissioffice-x.webp"
+                        />
+                        <img
+                            src="<?=$host?>/app/assets/img/vissioffice-x.png"
                             alt="Equipo optometría, óptica san martín de la vega"
                             loading="lazy"
                             decoding="async"

@@ -176,22 +176,18 @@ function changeActivePosition(position, fixed = false){
     });
   }
 }
-function removeImages(except) {
-  const target = document.getElementById("imgCT").children;
-  for (var i = 0; i <= target.length; i++) {
-    console.log(target, i, target[i]);
-    if (i !== except && i < 2) {
-      target[i].classList.remove("active");
-    }
-  }
+function removeImages() {
+  document.querySelectorAll("#imgCT > picture").forEach((e)=>{
+    e.classList.remove("active");
+  });
 }
 
 function changeImage(position) {
+  removeImages();
   const targetA = document.getElementById("p-"+position);
   const targetB = document.getElementById("sp-"+position);
   targetA.classList.add("active");
   targetB.classList.add("active");
-  removeImages(1);
 }
 function addingMenuLogic() {
   randomAnimate(true);
