@@ -149,67 +149,67 @@ section .hexagon .inner svg:hover {
 
 @keyframes rightA {
   0% {
-    transform: translate(-96%, 10%) scale(0.19);
+    transform: translate(-82%, 10%) scale(0.22);
   }
   20% {
-    transform: translate(-93%, 12%) scale(0.18);
+    transform: translate(-83%, 12%) scale(0.21);
   }
   40% {
-    transform: translate(-92%, 10%) scale(0.17);
+    transform: translate(-82%, 10%) scale(0.2);
   }
   60% {
-    transform: translate(-90%, 14%) scale(0.16);
+    transform: translate(-80%, 14%) scale(0.21);
   }
   80% {
-    transform: translate(-93%, 12%) scale(0.18);
+    transform: translate(-81%, 12%) scale(0.22);
   }
   100% {
-    transform: translate(-96%, 10%) scale(0.19);
+    transform: translate(-82%, 10%) scale(0.22);
   }
 }
 @keyframes backA {
   0% {
-    transform: translate(-88%, 0%) scale(0.19);
+    transform: translate(-86%, 0%) scale(0.2);
   }
   20% {
-    transform: translate(-93%, 12%) scale(0.18);
+    transform: translate(-87%, 12%) scale(0.19);
   }
   40% {
-    transform: translate(-92%, 10%) scale(0.17);
+    transform: translate(-89%, 10%) scale(0.18);
   }
   60% {
-    transform: translate(-90%, 14%) scale(0.16);
+    transform: translate(-90%, 14%) scale(0.17);
   }
   80% {
-    transform: translate(-93%, 12%) scale(0.18);
+    transform: translate(-88%, 12%) scale(0.19);
   }
   100% {
-    transform: translate(-88%, 0%) scale(0.19);
+    transform: translate(-86%, 0%) scale(0.2);
   }
 }
 @keyframes leftA {
   0% {
-    transform: translate(5%, 15%) scale(0.19);
+    transform: translate(-15%, 15%) scale(0.22);
   }
   20% {
-    transform: translate(7%, 17%) scale(0.19);
+    transform: translate(-17%, 17%) scale(0.22);
   }
   40% {
-    transform: translate(8%, 18%) scale(0.17);
+    transform: translate(-18%, 18%) scale(0.21);
   }
   60% {
-    transform: translate(6%, 17%) scale(0.16);
+    transform: translate(-16%, 17%) scale(0.2);
   }
   80% {
-    transform: translate(4%, 16%) scale(0.18);
+    transform: translate(-14%, 16%) scale(0.21);
   }
   100% {
-    transform: translate(5%, 15%) scale(0.19);
+    transform: translate(-15%, 15%) scale(0.22);
   }
 }
 @keyframes topA {
   0% {
-    transform: translate(-2.5%, 10%) scale(0.19);
+    transform: translate(-2.5%, 10%) scale(0.18);
   }
   20% {
     transform: translate(-1.7%, 11%) scale(0.19);
@@ -224,27 +224,27 @@ section .hexagon .inner svg:hover {
     transform: translate(-1%, 9%) scale(0.18);
   }
   100% {
-    transform: translate(-2.5%, 10%) scale(0.19);
+    transform: translate(-2.5%, 10%) scale(0.18);
   }
 }
 @keyframes bottomA {
   0% {
-    transform: translate(-7.5%, 0%) scale(0.19);
+    transform: translate(-10%, 0%) scale(0.2);
   }
   20% {
-    transform: translate(-7%, 4%) scale(0.19);
+    transform: translate(-10%, 4%) scale(0.19);
   }
   40% {
-    transform: translate(-8%, 8%) scale(0.17);
+    transform: translate(-11%, 8%) scale(0.2);
   }
   60% {
-    transform: translate(-6%, 7%) scale(0.16);
+    transform: translate(-12%, 7%) scale(0.19);
   }
   80% {
-    transform: translate(-5%, 4%) scale(0.18);
+    transform: translate(-11%, 4%) scale(0.2);
   }
   100% {
-    transform: translate(-7.5%, 0%) scale(0.19);
+    transform: translate(-10%, 0%) scale(0.2);
   }
 }
 .home {
@@ -418,34 +418,34 @@ section .hexagon .inner svg:hover {
   transition: opacity 1.2s ease;
 }
 .home main .glass#right.animate {
-  transform: translate(-92%, 10%) scale(0.19);
+  transform: translate(-82%, 10%) scale(0.22);
 }
 .home main .glass#right.animate.animate {
   animation: rightA 25s infinite alternate;
 }
 .home main .glass#back.animate {
-  transform: translate(-88%, 0%) scale(0.19);
+  transform: translate(-86%, 0%) scale(0.2);
 }
 .home main .glass#back.animate.animate {
-  animation: backA 25s infinite alternate;
+  animation: backA 35s infinite alternate;
 }
 .home main .glass#left.animate {
-  transform: translate(5%, 15%) scale(0.19);
+  transform: translate(-15%, 15%) scale(0.22);
 }
 .home main .glass#left.animate.animate {
-  animation: leftA 25s infinite alternate;
+  animation: leftA 30s infinite alternate;
 }
 .home main .glass#top.animate {
-  transform: translate(-2.5%, 10%) scale(0.19);
+  transform: translate(-2.5%, 10%) scale(0.18);
 }
 .home main .glass#top.animate.animate {
   animation: topA 25s infinite alternate;
 }
 .home main .glass#bottom.animate {
-  transform: translate(-7.5%, 0%) scale(0.2);
+  transform: translate(-10%, 0%) scale(0.2);
 }
 .home main .glass#bottom.animate.animate {
-  animation: bottomA 25s infinite alternate;
+  animation: bottomA 40s infinite alternate;
 }
 .home main .glass:not(.animate) {
   opacity: 0;

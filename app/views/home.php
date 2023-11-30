@@ -7,8 +7,8 @@
     <div class="home general-padding"> 
         <header>
             <section class="slider">
-                <div>
-                    <picture class="bg" id="p1">
+                <div id="imgCT">
+                    <picture class="bg" id="p-1">
                         <source
                             type="image/avif"
                             srcset="<?=$host?>/app/assets/img/fondo-wam800.avif"
@@ -25,7 +25,7 @@
                             height="1200"
                         />
                     </picture>
-                    <picture class="bg" id="p2">
+                    <picture class="bg" id="p-2">
                         <source
                             type="image/avif"
                             srcset="<?=$host?>/app/assets/img/fondo-vision.avif"
@@ -44,7 +44,7 @@
                         />
                     </picture>
                     <div id="abg"></div>
-                    <picture id="sp1">
+                    <picture id="sp-1">
                         <source
                             type="image/avif"
                             srcset="<?=$host?>/app/assets/img/wam800.avif"
@@ -60,7 +60,7 @@
                             decoding="async"
                         />
                     </picture>
-                    <picture id="sp2">
+                    <picture id="sp-2">
                         <source
                             type="image/avif"
                             srcset="<?=$host?>/app/assets/img/vision.avif"

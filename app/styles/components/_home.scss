@@ -154,33 +154,33 @@
                 }
             }
             &#right.animate {
-                transform: translate(-92%, 10%) scale(.19);
+                transform: translate(-82%, 10%) scale(.22);
                 &.animate {
                     animation: rightA 25s infinite alternate;
                 }
             }
             &#back.animate {
-                transform: translate(-88%, 0%) scale(.19);
+                transform: translate(-86%, 0%) scale(.20);
                 &.animate {
-                    animation: backA 25s infinite alternate;
+                    animation: backA 35s infinite alternate;
                 }
             }
             &#left.animate {
-                transform: translate(5%, 15%) scale(.19);
+                transform: translate(-15%, 15%) scale(.22);
                 &.animate {
-                    animation: leftA 25s infinite alternate;
+                    animation: leftA 30s infinite alternate;
                 }
             }
             &#top.animate {
-                transform: translate(-2.5%, 10%) scale(.19);
+                transform: translate(-2.5%, 10%) scale(.18);
                 &.animate {
                     animation: topA 25s infinite alternate;
                 }
             }
             &#bottom.animate {
-                transform: translate(-7.5%, 0%) scale(.2);
+                transform: translate(-10%, 0%) scale(.20);
                 &.animate {
-                    animation: bottomA 25s infinite alternate;
+                    animation: bottomA 40s infinite alternate;
                 }
             }
             &:not(.animate) {
