@@ -163,15 +163,15 @@ function changeActivePosition(position, fixed = false){
   const targ = document.querySelectorAll(".glass");
   if (fixed) {
     targ[position].classList.remove("active");
-    setTimeout(function(){targ[position].classList.add("animate")}, 1024);
+    setTimeout(function(){targ[position].classList.add("animate")}, 768);
   } else {
     targ.forEach(function(e, i) {
       if (i !== position) {
         e.classList.remove("active");
-        setTimeout(function(){e.classList.add("animate")}, 1024);
+        setTimeout(function(){e.classList.add("animate")}, 768);
       } else {
-        e.classList.remove("animate");
-        setTimeout(function(){e.classList.add("active")}, 128);
+        setTimeout(function(){e.classList.remove("animate")}, 742);
+        setTimeout(function(){e.classList.add("active")}, 768);
       }
     });
   }
@@ -188,9 +188,16 @@ function changeImage(position) {
   const targetB = document.getElementById("sp-"+position);
   targetA.classList.add("active");
   targetB.classList.add("active");
+  hexClicked(1,2);
+  setTimeout(()=>initOld(), 512);
+  if (position === 4) {
+    x.classList.add("light");
+  } else {
+    x.classList.remove("light");
+  }
 }
 function addingMenuLogic() {
-  randomAnimate(true);
+  //randomAnimate(true);
   const target = document.querySelector("#ccubes .cube");
   target.style.transform = positions[positionsArr[nextPosition]];
   if (nextPosition > 0) {

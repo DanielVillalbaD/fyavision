@@ -61,6 +61,24 @@
                             loading="lazy"
                         />
                     </picture>
+                    <picture class="bg" id="p-4">
+                        <source
+                            type="image/avif"
+                            srcset="<?=$host?>/app/assets/img/fondo-team.avif"
+                        />
+                        <source
+                            type="image/webp"
+                            srcset="<?=$host?>/app/assets/img/fondo-team.webp"
+                        />
+                        <img
+                            src="<?=$host?>/app/assets/img/fondo-team.jpg"
+                            alt="Gafas modernas mujer fya vision"
+                            decoding="async"
+                            width="1920"
+                            height="1200"
+                            loading="lazy"
+                        />
+                    </picture>
                     <div id="abg"></div>
                     <picture id="sp-1">
                         <source
@@ -110,6 +128,22 @@
                             decoding="async"
                         />
                     </picture>
+                    <picture id="sp-4">
+                        <source
+                            type="image/avif"
+                            srcset="<?=$host?>/app/assets/img/team.avif"
+                        />
+                        <source
+                            type="image/webp"
+                            srcset="<?=$host?>/app/assets/img/team.webp"
+                        />
+                        <img
+                            src="<?=$host?>/app/assets/img/team.png"
+                            alt="Equipo optometría, óptica san martín de la vega"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </picture>
                 </div>
             </section>
             <nav class="cubeMenu">
@@ -146,6 +180,7 @@
                     <div class="index" aria-label="Paso 1, fisiologia ocular"><span>1</span><h2><strong>FISIOLOGÍA</strong><br/>WAM800</h2></div> 
                     <button class="close" aria-label="cerrar">&#10005;</button>
                     <button class="next" aria-label="siguiente paso">&#10230;</button>
+                    <div class="noShow"><button>&#10009;</button><button>&#10006;</button></div>
                 </div>
             </section>
             <section class="glass" id="back">
@@ -160,6 +195,7 @@
                     <button class="close" aria-label="cerrar">&#10005;</button>
                     <button class="prev" aria-label="paso anterior">&#10229;</button>
                     <button class="next" aria-label="siguiente paso">&#10230;</button>
+                    <div class="noShow"><button>&#10010;</button><button>&#10006;</button></div>
                 </div>
             </section>
             <section class="glass" id="left">
@@ -175,6 +211,7 @@
                     <button class="close" aria-label="cerrar">&#10005;</button>
                     <button class="prev" aria-label="paso anterior">&#10229;</button>
                     <button class="next" aria-label="siguiente paso">&#10230;</button>
+                    <div class="noShow"><button>&#10010;</button><button>&#10006;</button></div>
                 </div>
             </section>
             <section class="glass" id="top">
@@ -195,6 +232,7 @@
                     <button class="close" aria-label="cerrar">&#10005;</button>
                     <button class="prev" aria-label="paso anterior">&#10229;</button>
                     <button class="next" aria-label="siguiente paso">&#10230;</button>
+                    <div class="noShow"><button>&#10010;</button><button>&#10006;</button></div>
                 </div>
             </section>
             <section class="glass" id="bottom">
@@ -215,6 +253,7 @@
                     <button class="close" aria-label="cerrar">&#10005;</button>
                     <button class="prev" aria-label="paso anterior">&#10229;</button>
                     <button class="next" aria-label="siguiente paso">&#10230;</button>
+                    <div class="noShow"><button>&#10010;</button><button>&#10006;</button></div>
                 </div>
             </section>
         </main>

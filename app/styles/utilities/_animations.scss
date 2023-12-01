@@ -1,40 +1,40 @@
 @keyframes rightA {
-    0% {transform: translate(-82%, 10%) scale(.22);}
-    20% {transform: translate(-83%, 12%) scale(.21);}
-    40% {transform: translate(-82%, 10%) scale(.20);}
-    60% {transform: translate(-80%, 14%) scale(.21);}
-    80% {transform: translate(-81%, 12%) scale(.22);}
-    100% {transform: translate(-82%, 10%) scale(.22);}
+    0% {transform: translate(-52%, 10%) scale(.22);}
+    20% {transform: translate(-53%, 12%) scale(.21);}
+    40% {transform: translate(-52%, 10%) scale(.20);}
+    60% {transform: translate(-48%, 14%) scale(.21);}
+    80% {transform: translate(-51%, 12%) scale(.22);}
+    100% {transform: translate(-52%, 10%) scale(.22);}
 }
 @keyframes backA {
-    0% {transform: translate(-86%, 0%) scale(.20);}
-    20% {transform: translate(-87%, 12%) scale(.19);}
-    40% {transform: translate(-89%, 10%) scale(.18);}
-    60% {transform: translate(-90%, 14%) scale(.17);}
-    80% {transform: translate(-88%, 12%) scale(.19);}
-    100% {transform: translate(-86%, 0%) scale(.20);}
+    0% {transform: translate(-56%, 0%) scale(.20);}
+    20% {transform: translate(-57%, 12%) scale(.19);}
+    40% {transform: translate(-59%, 10%) scale(.18);}
+    60% {transform: translate(-50%, 14%) scale(.17);}
+    80% {transform: translate(-58%, 12%) scale(.19);}
+    100% {transform: translate(-56%, 0%) scale(.20);}
 }
 @keyframes leftA {
-    0% {transform: translate(-15%, 15%) scale(.22);}
-    20% {transform: translate(-17%, 17%) scale(.22);}
-    40% {transform: translate(-18%, 18%)  scale(.21);}
-    60% {transform: translate(-16%, 17%)  scale(.20);}
-    80% {transform: translate(-14%, 16%)  scale(.21);}
-    100% {transform: translate(-15%, 15%) scale(.22);}
+    0% {transform: translate(-25%, 15%) scale(.22);}
+    20% {transform: translate(-27%, 17%) scale(.22);}
+    40% {transform: translate(-32%, 19%)  scale(.21);}
+    60% {transform: translate(-28%, 18%)  scale(.20);}
+    80% {transform: translate(-24%, 20%)  scale(.21);}
+    100% {transform: translate(-25%, 15%) scale(.22);}
 }
 @keyframes topA {
-    0% {transform: translate(-2.5%, 10%) scale(.18);}
-    20% {transform: translate(-1.7%, 11%) scale(.19);}
-    40% {transform: translate(-2.8%, 12%)  scale(.17);}
-    60% {transform: translate(0.6%, 11%)  scale(.16);}
-    80% {transform: translate(-1%, 9%)  scale(.18);}
-    100% {transform: translate(-2.5%, 10%) scale(.18);}
+    0% {transform: translate(-12.5%, 10%) scale(.18);}
+    20% {transform: translate(-11.7%, 11%) scale(.19);}
+    40% {transform: translate(-12.8%, 15%)  scale(.17);}
+    60% {transform: translate(-15.6%, 12%)  scale(.16);}
+    80% {transform: translate(-13%, 9%)  scale(.18);}
+    100% {transform: translate(-12.5%, 10%) scale(.18);}
 }
 @keyframes bottomA {
-    0% {transform: translate(-10%, 0%) scale(.20);}
-    20% {transform: translate(-10%, 4%) scale(.19);}
-    40% {transform: translate(-11%, 8%)  scale(.20);}
-    60% {transform: translate(-12%, 7%)  scale(.19);}
-    80% {transform: translate(-11%, 4%)  scale(.20);}
-    100% {transform: translate(-10%, 0%) scale(.20);}
+    0% {transform: translate(-20%, 0%) scale(.20);}
+    20% {transform: translate(-20%, 4%) scale(.19);}
+    40% {transform: translate(-21%, 9%)  scale(.20);}
+    60% {transform: translate(-26%, 8%)  scale(.19);}
+    80% {transform: translate(-21%, 6%)  scale(.20);}
+    100% {transform: translate(-20%, 0%) scale(.20);}
 }

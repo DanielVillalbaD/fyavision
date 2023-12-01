@@ -99,6 +99,7 @@ section {
   }
   
   .hex path, .hex use {
+    transition: color 1.2s ease;
     max-width: 100%;
     max-height: 100%;
     stroke: none;
@@ -106,4 +107,12 @@ section {
   }
 
   
-  
+  #abg.light .hexagon {
+    color: var(--light_bg);
+    .inner svg {
+      color: var(--light_bg);
+    }
+    .hex path, .hex use {
+      color: var(--light_bg);
+    }
+  }
