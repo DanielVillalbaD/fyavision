@@ -22,7 +22,7 @@ section {
     background: transparent;
     
     > div {
-      transition: opacity .3s linear;
+      transition: opacity 2.2s linear;
     }
     svg {
       display: none;
@@ -37,15 +37,14 @@ section {
       top: 0;
       //background-blend-mode: multiply;
       right: 0;
-      transition: opacity 0.4s ease, width 0.4s ease, height 0.4s ease,
-      transform 0.3s ease-in-out;
-      animation: init 2s forwards;
+      transition: opacity 2.2s ease, width 0.4s ease, height 0.4s ease, transform 0.3s ease-in-out;
+      animation: init 2.2s forwards;
       .inner {
         //background-blend-mode: multiply;
         width: 100%;
         height: auto;
         position: absolute;
-        transition: opacity 2s ease-in-out;
+        transition: opacity 2.2s ease-in-out;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%) scale(1.0475);
@@ -57,7 +56,8 @@ section {
           transition: transform .25 ease-in-out, filter .25s ease-in-out;
           cursor: pointer;
           &.hex {
-            opacity: .975;
+            transition: opacity 2.2s ease-in-out;
+            opacity: .8;
           }
   
           &:hover {
@@ -68,15 +68,7 @@ section {
       }
     }
   }
-  
-  .in {
-    opacity: .975;
-  }
-  
-  .out {
-    opacity: 0.5;
-  }
-  
+
   @keyframes init {
     0% {
       opacity: 0;
@@ -91,7 +83,9 @@ section {
     }
   }
   
-  
+  .in {
+    opacity: .975;
+  }
   .line {
     color: var(--dark_bg);
     opacity: .5;
@@ -99,7 +93,7 @@ section {
   }
   
   .hex path, .hex use {
-    transition: color 1.2s ease;
+    transition: opacity 2.2s ease-in-out, color 2.2s ease;
     max-width: 100%;
     max-height: 100%;
     stroke: none;
@@ -116,3 +110,21 @@ section {
       color: var(--light_bg);
     }
   }
+
+  #abg.map .hexagon {
+    color: var(--dark_bg_grad);
+    .inner svg {
+      color: var(--dark_bg_grad);
+    }
+    .hex path, .hex use {
+      color: var(--dark_bg_grad);
+    }
+  }
+  
+  .out {
+    opacity: 0.3;
+    .hex path, .hex use, svg {
+      opacity: .75;
+    }
+  }
+ 

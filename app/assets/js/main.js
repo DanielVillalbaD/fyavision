@@ -1,32 +1,3 @@
-NodeList.prototype.indexOf = Array.prototype.indexOf;
-function hexClicked(j, f) {
-  var idA = `.p${f}${j}`;
-  var eClicked = document.querySelector(idA).parentNode;
-  const list = document.querySelectorAll('#abg > div');
-  var arr = Array.prototype.slice.call(eClicked.parentNode.children)
-  let index = arr.indexOf(eClicked);
-  var previous, current, next;    
-  for (var i = 0; i < arr.length; i++) {
-    
-    setTimeout(()=>{
-      if (index <= arr.length) {
-        index += 1;
-      } else {
-        index = 0;
-      }
-      if (eClicked && eClicked.parentNode) {
-        previous=arr[index==0?arr.length-1:index-1];
-        current=arr[index];
-        next=arr[index==arr.length-1?0:index+1];
-        i === 0 && current ? current.style.opacity = 0 : null;
-        previous ? previous.style.opacity = 0 : null;
-        next ? next.style.opacity = 0 : null;
-      }
-      
-    }, (2000/(i+1))+i*15);
-  }
-}
-
 const x = document.getElementById("abg");
 const figPerFile = 10;
 let intervalIx = 0;
@@ -48,9 +19,9 @@ function addElements(nFiles, ix = intervalIx) {
       for (var i = -3; i <= figPerFile + 1; i++) {
           var inner = '';
           if (f % 2) {
-            inner = `<div class="hexagon p${f}${i}" style="transform: translate(${i === -1 ? 75 : -i*150}%, ${i === -1 ? f == 0 ? -100 : f*100 : f == 0 ? -50 : f * 50}%) rotate(90deg);"><div class="inner in" onclick="hexClicked(${i}, ${f});">${hexagonIcon}</div></div>`;
+            inner = `<div class="hexagon p${f}${i}" style="transform: translate(${i === -1 ? 75 : -i*150}%, ${i === -1 ? f == 0 ? -100 : f*100 : f == 0 ? -50 : f * 50}%) rotate(90deg);"><div class="inner in">${hexagonIcon}</div></div>`;
           } else if (i % 2 && !(f == 2 && i == -3)) {
-            inner = `<div class="hexagon p${f}${i}" style="transform: translate(${(i === 0 ? 1 : -i)*75 - 150}%, ${f * 50}%) rotate(90deg);"><div class="inner in" onclick="hexClicked(${i}, ${f});">${hexagonIcon}</div></div>`;
+            inner = `<div class="hexagon p${f}${i}" style="transform: translate(${(i === 0 ? 1 : -i)*75 - 150}%, ${f * 50}%) rotate(90deg);"><div class="inner in">${hexagonIcon}</div></div>`;
           }
           polygonArr.push(inner);
         }
@@ -98,53 +69,24 @@ function initAgain() {
 }
 
 function randomAnimate(slide = false) {
-  if (slide) {
-    if (ixxAnim) {
-      clearInterval(ixxAnim);
-    }
-    const innerTarget = document.querySelectorAll(".hexagon .inner")
-    innerTarget.forEach(e=>e.classList.remove("out"));
-    intervalSleeper = true;
-    setTimeout(()=>{intervalSleeper = false}, 2064);
-  } else {
-    
+  if (slide && ixxAnim) {
+    clearInterval(ixxAnim);
   }
-  var ixxAnim = setInterval(function(){
-    if (!intervalSleeper) {
+    var ixxAnim = window.setInterval(function(){
       const tgt = document.querySelectorAll(".hexagon .inner");
-      const randomP = Math.floor(Math.random() * (tgt.length + 1));
-      if (tgt[randomP]) {
-        tgt[randomP].classList.toggle("out");
+      const randomP = Math.floor(Math.random() * (tgt.length));
+      const max = 200;
+
+      for (var m = -max; m <= max; m++) {
+        if (tgt[randomP + m]) {
+          tgt[randomP + m].classList.toggle("out");
+        }
+        if (tgt[tgt.length - randomP + m]) {
+          tgt[tgt.length - randomP + m].classList.toggle("out");
+        }
       }
-      if (tgt[randomP -1]) {
-        tgt[randomP - 1].classList.toggle("out");
-      }
-      if (tgt[randomP +1]) {
-        tgt[randomP + 1].classList.toggle("out");
-      }
-      if (tgt[randomP -2]) {
-        tgt[randomP - 2].classList.toggle("out");
-      }
-      if (tgt[randomP +2]) {
-        tgt[randomP + 2].classList.toggle("out");
-      }
-      if (tgt[randomP -3]) {
-        tgt[randomP - 3].classList.toggle("out");
-      }
-      if (tgt[randomP +3]) {
-        tgt[randomP + 3].classList.toggle("out");
-      }
-      if (tgt[randomP -4]) {
-        tgt[randomP - 4].classList.toggle("out");
-      }
-      if (tgt[randomP +4]) {
-        tgt[randomP + 4].classList.toggle("out");
-      }
-    } else {
-      return
-    }
-  }, 64);
-}
+    }, 2048);
+  }
 
 const positions = {
   'right':  `translateZ(25px) rotateY(-84deg) rotateX(-0deg) rotateZ(2deg)`,
@@ -168,7 +110,9 @@ function changeActivePosition(position, fixed = false){
     targ.forEach(function(e, i) {
       if (i !== position) {
         e.classList.remove("active");
-        setTimeout(function(){e.classList.add("animate")}, 768);
+        if (position !== 0 && !clicked) {
+          setTimeout(function(){e.classList.add("animate")}, 768);
+        }
       } else {
         setTimeout(function(){e.classList.remove("animate")}, 742);
         setTimeout(function(){e.classList.add("active")}, 768);
@@ -180,55 +124,96 @@ function removeImages() {
   document.querySelectorAll("#imgCT > picture").forEach((e)=>{
     e.classList.remove("active");
   });
+  document.querySelectorAll("#imgCT > div").forEach((e)=>{
+    e.classList.remove("active");
+  });
 }
 
 function changeImage(position) {
   removeImages();
   const targetA = document.getElementById("p-"+position);
-  const targetB = document.getElementById("sp-"+position);
   targetA.classList.add("active");
-  targetB.classList.add("active");
-  hexClicked(1,2);
-  setTimeout(()=>initOld(), 512);
-  if (position === 4) {
+  if (position !== 5) {
+    const targetB = document.getElementById("sp-"+position);
+    targetB.classList.add("active");
+  }
+  if (position === 4 || position === 0) {
     x.classList.add("light");
+    x.classList.remove("map");
+    x.parentNode.parentNode.parentNode.classList.remove("p5");
+  } else if (position === 5) {
+    x.classList.add("map");
+    x.classList.remove("light");
+    x.parentNode.parentNode.parentNode.classList.add("p5");
   } else {
     x.classList.remove("light");
+    x.classList.remove("map");
+    x.parentNode.parentNode.parentNode.classList.remove("p5");
   }
 }
-function addingMenuLogic() {
-  //randomAnimate(true);
+function addingMenuLogic(restore = false) {
+  if (restore === true) { nextPosition -= 1; }
   const target = document.querySelector("#ccubes .cube");
   target.style.transform = positions[positionsArr[nextPosition]];
-  if (nextPosition > 0) {
-    changeActivePosition(nextPosition - 1);
-    changeImage(nextPosition);
-  } else if (nextPosition === 0 && clicked) {
+  if (nextPosition === 0 && clicked) {
     changeActivePosition(4, true);
+  } else {
+    changeActivePosition(nextPosition);
   }
+  changeImage(nextPosition);
   nextPosition >= 5 ? nextPosition = 0 : nextPosition += 1;
+  if (!clicked) {
+    initOld();
+  }
   clicked = true;
+  randomAnimate(true);
 }
 
 function goToPreviousSlide() {
-  nextPosition = nextPosition - 2;
+  nextPosition = nextPosition - 1;
   addingMenuLogic();
 }
 
-window.onload = (event) => {
+window.onload = () => {
     initOld();
     randomAnimate();
-    //setTimeout(()=> hexClicked(1,2), 3300);
     addingMenuLogic();
+    initClock();
 };
 
 function closeSlide() {
-  changeActivePosition(nextPosition - 2, true);
+  if (nextPosition === 0 && clicked) {
+    changeActivePosition(5, true);
+  } else {
+    changeActivePosition(nextPosition - 1, true);
+  }
 }
+
 document.querySelector("#ccubes .cube").addEventListener("click", addingMenuLogic, false);
 document.querySelectorAll(".glass button.next").forEach((e)=>e.addEventListener("click", addingMenuLogic, false));
 document.querySelectorAll(".glass button.prev").forEach((e)=>e.addEventListener("click", goToPreviousSlide, false));
 document.querySelectorAll(".glass button.close").forEach((e)=>e.addEventListener("click", closeSlide, false));
+document.querySelectorAll(".glass button.restore").forEach((e)=>e.addEventListener("click", ()=>addingMenuLogic(true), false));
+document.querySelectorAll(".glass button.hideBtn").forEach((e)=>e.addEventListener("click", ()=>hideElement(e), false));
 
+function hideElement(e) {
+  e.parentNode.parentNode.style.opacity = "0";
+}
 
-
+function initClock() {
+  const deg = 6;
+  const hour = document.querySelector(".hour");
+  const min = document.querySelector(".min");
+  const sec = document.querySelector(".sec");
+  const setClock = () => {
+    let day = new Date();
+    let hh = day.getHours() * 30;
+    let mm = day.getMinutes() * deg;
+    let ss = day.getSeconds() * deg;
+    hour.style.transform = `rotateZ(${hh + mm / 12}deg)`;
+    min.style.transform = `rotateZ(${mm}deg)`;
+    sec.style.transform = `rotateZ(${ss}deg)`;
+  };
+  setClock();
+  setInterval(setClock, 1000);
+}
