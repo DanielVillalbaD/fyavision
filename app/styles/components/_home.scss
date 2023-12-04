@@ -104,8 +104,8 @@
             //filter: invert(1);
             font-weight: 300;
             position: absolute;
-            top: 120px;
-            left: 27px;
+            top: 110px;
+            left: 24px;
             mix-blend-mode: exclusion;
             font-size: 90%;
         }
@@ -115,8 +115,8 @@
             color: currentColor;
             mix-blend-mode: exclusion;
             position: absolute;
-            top: 25px;
-            left: 140px;
+            top: 20px;
+            left: 127px;
             filter: invert(1);
             
             .fya {
@@ -149,7 +149,7 @@
     main {
         .glass {
             position: absolute;
-            top: 110px;
+            top: 175px;
             left: 50%;
             width: 80vw;
             max-width: 740px;
@@ -205,20 +205,20 @@
                     }
                 }
                 .card {
-                    background: rgba(255, 255, 255, 0.46);
-                    background: linear-gradient(96deg, rgba(255,255,255,0.35) 0%, rgba(255,255,255,0.5) 33%, rgba(255,255,255,0.65) 66%, rgba(255,255,255,0.38) 100%);
+                    background: rgba(255, 255, 255, 0.55);
+                    background: linear-gradient(96deg, rgba(255,255,255,0.45) 0%, rgba(255,255,255,0.6) 33%, rgba(255,255,255,0.65) 66%, rgba(255,255,255,0.48) 100%);
                     border: none;
                     padding: 70px 36px 50px;
                     border-radius: 6px;
-                    -webkit-backdrop-filter: blur(7px) hue-rotate(-20deg);
-                    backdrop-filter: blur(7px) hue-rotate(-20deg);
+                    -webkit-backdrop-filter: blur(2px) hue-rotate(-10deg) brightness(1.2);
+                    backdrop-filter: blur(2px) hue-rotate(-10deg) brightness(1.2);
                     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
                     color: black;
                     max-width: 800px;
                     height: 100%;
                     position: relative;
                     user-select: none;
-                    box-shadow: 0 0 20px rgba(0,0,0, .4), 0 0 2.9em #0d324dd3 inset;
+                    box-shadow: 0 0 4px rgba(200,240,250, .35), 0 0 2.9em #0d324db1 inset;
                     .fp {
                         display: flex;
                         justify-content: left;
@@ -280,6 +280,129 @@
                     }
                 }
             }
+            &#front {
+                max-width: 700px;
+                display: flex;
+                align-items: stretch;
+                
+                &>div {
+                    flex: 1;
+                }
+                .container {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    align-items: stretch;
+                    .first {
+                        flex: 1;
+                    }
+                    .card {
+                        &:not(.nd) {
+                            color: white;
+                            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.2);
+                            background: linear-gradient(96deg, rgba(0,5,0,0.6) 0%, rgba(0,0,0,0.7) 33%, rgba(0,5,0,0.65) 66%, rgba(0,0,0,0.5) 100%);
+                            backdrop-filter: blur(1.5px) hue-rotate(5deg) brightness(0.9);
+                        }
+                        padding: 35px;
+                        height: auto;
+                        h2 {
+                            text-align: center;
+                            margin-bottom: 20px;
+                            font-weight: bold;
+                            letter-spacing: 3px;
+                        }
+                        .opening-hours {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            h3 {
+                                margin-bottom: 15px;
+                                opacity: .7;
+                                text-transform: uppercase;
+                                font-size: 90%;
+                            }
+                            > div:first-child {
+                                text-align: right;
+                            }
+                            .v-separator {
+                                flex-basis: auto;
+                                content: "";
+                                display: block;
+                                height: 110px;
+                                width: 2px;
+                                background: #727272;
+                                margin: 0 25px;
+                            }
+                            p {
+                                margin: 0;
+                            }
+                        }
+                        &.nd {
+                            margin-top: 7.5px;
+                            flex-direction: row;
+                            justify-content: space-around;
+                            padding: 20px;
+                            span {
+                                display: inline;
+                            }
+                        }
+                    }
+                    .social-media {
+                        display: flex;
+                        flex-basis: auto;
+                        align-items: stretch;
+                        svg {
+                            transform: rotate(90deg);
+                            transform-origin: left;
+                            width: 150px;
+                            height: 60px;
+                            fill: white;
+                            display: block;
+                        }
+                        .fb {
+                            margin: 0 7.5px;
+                            text-orientation: mixed;
+                            max-width: 50px;
+                            background: rgba(1, 101, 225, 0.55);
+                            background: linear-gradient(96deg, rgba(1, 101, 225, 0.55) 0%, rgba(1, 101, 225,0.6) 33%, rgba(1, 101, 225,0.65) 66%, rgba(1, 101, 225,0.48) 100%);
+                        }
+                        .ig {
+                            max-width: 50px;
+                            text-orientation: mixed;
+                            background: #d6249f;
+                            background: radial-gradient(circle at 30% 107%, rgb(252, 244, 150, .6) 0%, rgb(253, 244, 150, .7) 5%, rgb(253, 88, 73, .65) 45%,rgb(214, 36, 157, .65) 60%,rgb(40, 89, 235, .7) 90%);
+                        }
+                    }
+                    .lt {
+                        width: 100%;
+                        margin-top: 7.5px;
+                    }
+                }
+                .varilux {
+                    writing-mode: vertical-lr;
+                    flex: 0;
+                    margin: 0;
+                    padding: 0;
+                    height: auto;
+                    .card.nd {
+                        margin: 0;
+                        height: 100%;
+                        min-width: 68px;
+                        img {
+                            position: absolute;
+                            transform: rotate(-90deg);
+                            transform-origin: 0% 50%;
+                            display: block;
+                            height: 50px;
+                            bottom: 70px;
+                            left: 35px;
+                        }
+                    }
+                }
+                .black {
+                    padding-left: 7.5px;
+                }
+            }
             &#right {
                 transform: translate(-52%, 10%) scale(.22) matrix3d(0.94, 0, 0.34, 0.0002, 0, 1, 0, 0, -0.34, 0, 0.94, 0, 1, 0, 10, 1);
                 &.animate {
@@ -318,6 +441,11 @@
                 opacity: 1;
                 animation: none!important;
                 transform: translate(-50%, 0) scale(1)!important;
+                &#front {
+                    top: 175px;
+                    left: 25px;
+                    transform: translate(0,0) scale(1)!important;
+                }
             }
             &:not(.active) .container .card, &:not(.active) .container div {
                & > * {

@@ -16,11 +16,12 @@ html{
 
 section {
     width: 100vw;
-    height: 100vh;
     position: relative;
     overflow: hidden;
     background: transparent;
-    
+    &:not(.glass) {
+      height: 100vh;
+    }
     > div {
       transition: opacity 2.2s linear;
     }

@@ -206,14 +206,56 @@ function initClock() {
   const min = document.querySelector(".min");
   const sec = document.querySelector(".sec");
   const setClock = () => {
-    let day = new Date();
+    let day = new Date(new Date().toLocaleString("en-US", {timeZone: 'Europe/Madrid'}));
     let hh = day.getHours() * 30;
     let mm = day.getMinutes() * deg;
     let ss = day.getSeconds() * deg;
+    let sd = day.getDay();
     hour.style.transform = `rotateZ(${hh + mm / 12}deg)`;
     min.style.transform = `rotateZ(${mm}deg)`;
     sec.style.transform = `rotateZ(${ss}deg)`;
+    openingHours(sd, hh, mm);
   };
   setClock();
   setInterval(setClock, 1000);
+}
+const door = document.getElementById("door");
+function openingHours(d, h, m) {
+  const hour = h/30 + "." + m/6;
+  if (openingDates[d].m && hour >= openingDates[d].m.split("-")[0] && hour <= openingDates[d].m.split("-")[0]) {
+    door.innerText = "ABIERTO";
+  } else {
+    door.innerText = "CERRADO";
+  }
+}
+
+const openingDates = {
+  "0": {
+    "m": false,
+    "t": false
+  },
+  "1": {
+    "m": "10-14",
+    "t": "17-20.30"
+  },
+  "2": {
+    "m": "10-14",
+    "t": "17-20.30"
+  },
+  "3": {
+    "m": "10-14",
+    "t": "17-20.30"
+  },
+  "4": {
+    "m": "10-14",
+    "t": "17-20.30"
+  },
+  "5": {
+    "m": "10-14",
+    "t": "17-20.30"
+  },
+  "6": {
+    "m": "10-14",
+    "t": false
+  }
 }
